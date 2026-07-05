@@ -1,76 +1,95 @@
---pivot
+--Update Order Dates
 USE OnlineRetailStore;
 GO
 
+UPDATE Orders SET OrderDate='2026-01-10' WHERE OrderID=1001;
+UPDATE Orders SET OrderDate='2026-02-15' WHERE OrderID=1002;
+UPDATE Orders SET OrderDate='2026-03-18' WHERE OrderID=1003;
+UPDATE Orders SET OrderDate='2026-01-25' WHERE OrderID=1004;
+UPDATE Orders SET OrderDate='2026-02-28' WHERE OrderID=1005;
+
+SELECT OrderID, OrderDate
+FROM Orders;
+
+--Aggregate Sales
+SELECT
+    p.ProductName,
+    DATENAME(MONTH,o.OrderDate) AS SalesMonth,
+    SUM(od.Quantity) AS TotalQuantity
+FROM Orders o
+JOIN OrderDetails od
+    ON o.OrderID=od.OrderID
+JOIN Products p
+    ON od.ProductID=p.ProductID
+GROUP BY
+    p.ProductName,
+    DATENAME(MONTH,o.OrderDate);
+
+
+--pivot
 SELECT *
 FROM
 (
     SELECT
-        c.Region,
+        p.ProductName,
+        DATENAME(MONTH,o.OrderDate) AS SalesMonth,
         od.Quantity
-    FROM Customers c
-    JOIN Orders o
-        ON c.CustomerID = o.CustomerID
+    FROM Orders o
     JOIN OrderDetails od
-        ON o.OrderID = od.OrderID
-) AS SourceTable
+        ON o.OrderID=od.OrderID
+    JOIN Products p
+        ON od.ProductID=p.ProductID
+) AS SourceData
 
 PIVOT
 (
     SUM(Quantity)
-    FOR Region IN
+    FOR SalesMonth IN
     (
-        [North],
-        [South],
-        [East],
-        [West]
+        [January],
+        [February],
+        [March]
     )
 ) AS PivotTable;
 --unpivot
-SELECT Region, TotalQuantity
+SELECT
+    ProductName,
+    SalesMonth,
+    Quantity
 FROM
 (
-    SELECT
-        [North],
-        [South],
-        [East],
-        [West]
+    SELECT *
     FROM
     (
-        SELECT *
-        FROM
-        (
-            SELECT
-                c.Region,
-                od.Quantity
-            FROM Customers c
-            JOIN Orders o
-                ON c.CustomerID = o.CustomerID
-            JOIN OrderDetails od
-                ON o.OrderID = od.OrderID
-        ) AS SourceTable
+        SELECT
+            p.ProductName,
+            DATENAME(MONTH,o.OrderDate) AS SalesMonth,
+            od.Quantity
+        FROM Orders o
+        JOIN OrderDetails od
+            ON o.OrderID=oD.OrderID
+        JOIN Products p
+            ON od.ProductID=p.ProductID
+    ) AS SourceData
 
-        PIVOT
+    PIVOT
+    (
+        SUM(Quantity)
+        FOR SalesMonth IN
         (
-            SUM(Quantity)
-            FOR Region IN
-            (
-                [North],
-                [South],
-                [East],
-                [West]
-            )
-        ) AS PivotTable
-    ) AS P
-) AS Data
+            [January],
+            [February],
+            [March]
+        )
+    ) AS PivotTable
+) AS P
 
 UNPIVOT
 (
-    TotalQuantity FOR Region IN
+    Quantity FOR SalesMonth IN
     (
-        [North],
-        [South],
-        [East],
-        [West]
+        [January],
+        [February],
+        [March]
     )
 ) AS UnpivotTable;

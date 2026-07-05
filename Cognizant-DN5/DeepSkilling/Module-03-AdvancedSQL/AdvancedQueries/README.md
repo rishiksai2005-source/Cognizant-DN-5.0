@@ -74,7 +74,11 @@ Successfully generated a calendar using a Recursive CTE and synchronized product
 
 ## Objective
 
-Learn how to transform rows into columns using PIVOT and convert columns back into rows using UNPIVOT.
+Transform monthly sales data for reporting purposes using SQL Server PIVOT and UNPIVOT.
+
+## Scenario
+
+Display monthly sales quantity for each product in a pivoted format and convert it back into rows using UNPIVOT.
 
 ## Topics Covered
 
@@ -84,14 +88,14 @@ Learn how to transform rows into columns using PIVOT and convert columns back in
 - SUM()
 - Data Transformation
 
-## Scenario
+## Files
 
-Generate a regional sales summary using PIVOT and then convert the summary back to row format using UNPIVOT.
+- PivotAndUnpivot.sql
+- README.md
 
 ## Outcome
 
-Successfully transformed row-based sales data into a column format and restored it back to rows using SQL Server PIVOT and UNPIVOT.
-
+Successfully transformed monthly sales records into a report format and restored the original row format using SQL Server PIVOT and UNPIVOT.
 
 ## Author
 
