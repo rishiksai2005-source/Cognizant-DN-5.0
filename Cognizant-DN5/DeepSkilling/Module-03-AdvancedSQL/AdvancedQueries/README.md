@@ -97,6 +97,34 @@ Display monthly sales quantity for each product in a pivoted format and convert 
 
 Successfully transformed monthly sales records into a report format and restored the original row format using SQL Server PIVOT and UNPIVOT.
 
+# Exercise 5 - Using a CTE to Simplify a Query
+
+## Objective
+
+Learn how to simplify complex SQL queries using Common Table Expressions (CTEs).
+
+## Scenario
+
+Calculate the total sales for each customer and retrieve only those customers whose total sales exceed a specified amount.
+
+## Topics Covered
+
+- Common Table Expression (CTE)
+- WITH clause
+- Aggregate Functions
+- SUM()
+- GROUP BY
+- Filtering aggregated results
+
+## Files
+
+- CTEQuery.sql
+- README.md
+
+## Outcome
+
+Successfully used a CTE to improve query readability and retrieve customers with total sales above a threshold.
+
 ## Author
 
 **Rishik Sai**
