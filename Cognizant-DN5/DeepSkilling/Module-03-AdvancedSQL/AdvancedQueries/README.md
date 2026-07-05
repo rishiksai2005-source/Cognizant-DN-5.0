@@ -70,6 +70,28 @@ This exercise demonstrates:
 Successfully generated a calendar using a Recursive CTE and synchronized product data using the MERGE statement.
 
 ---
+# Exercise 4 - PIVOT and UNPIVOT
+
+## Objective
+
+Learn how to transform rows into columns using PIVOT and convert columns back into rows using UNPIVOT.
+
+## Topics Covered
+
+- PIVOT
+- UNPIVOT
+- Aggregate Functions
+- SUM()
+- Data Transformation
+
+## Scenario
+
+Generate a regional sales summary using PIVOT and then convert the summary back to row format using UNPIVOT.
+
+## Outcome
+
+Successfully transformed row-based sales data into a column format and restored it back to rows using SQL Server PIVOT and UNPIVOT.
+
 
 ## Author
 
