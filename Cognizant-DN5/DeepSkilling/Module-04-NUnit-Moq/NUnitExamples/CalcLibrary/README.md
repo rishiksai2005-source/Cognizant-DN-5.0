@@ -1,14 +1,47 @@
-# NUnit Handson 2 - Advanced Calculator Testing
+# NUnit - CalcLibrary
+
+## Project Overview
+
+This project demonstrates unit testing using the NUnit framework. It contains test cases for the `SimpleCalculator` class covering basic arithmetic operations, parameterized testing, exception handling, and state validation.
+
+---
+
+# Handson 1 - Basic NUnit Testing
 
 ## Objective
 
-Learn advanced NUnit testing techniques using parameterized tests, assertions, and exception handling.
+Learn the basics of NUnit by writing unit tests for a simple calculator library.
 
-## Project
+## Features Implemented
 
-CalcLibrary
+- Addition Testing
+- Parameterized Tests
 
-## Features Tested
+## NUnit Concepts Used
+
+- TestFixture
+- SetUp
+- Test
+- TestCase
+- Assert.That
+
+## Verification
+
+Executed multiple addition test cases using parameterized tests.
+
+## Outcome
+
+Successfully implemented basic NUnit unit tests for the Addition method.
+
+---
+
+# Handson 2 - Advanced NUnit Testing
+
+## Objective
+
+Implement comprehensive unit tests for all calculator operations.
+
+## Features Implemented
 
 - Addition
 - Subtraction
@@ -18,11 +51,10 @@ CalcLibrary
 - AllClear Method
 - GetResult Property
 
-## NUnit Concepts Covered
+## NUnit Concepts Used
 
 - TestFixture
 - SetUp
-- Test
 - TestCase
 - Assert.That
 - Assert.Throws
@@ -33,4 +65,23 @@ Executed unit tests for all calculator operations including exception handling a
 
 ## Outcome
 
-Successfully implemented comprehensive NUnit test cases for calculator functionality using parameterized tests and exception testing.
+Successfully implemented complete NUnit test coverage for the SimpleCalculator class.
+
+---
+
+# Technologies Used
+
+- C#
+- .NET
+- NUnit Framework
+- Visual Studio
+
+---
+
+# Test Results
+
+- Total Tests Executed: **16**
+- Passed: **16**
+- Failed: **0**
+
+All unit tests executed successfully.
