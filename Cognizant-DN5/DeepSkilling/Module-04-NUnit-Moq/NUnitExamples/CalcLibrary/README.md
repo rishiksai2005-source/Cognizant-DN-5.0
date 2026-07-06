@@ -1,8 +1,8 @@
-# NUnit Handson 1 - Calculator Testing
+# NUnit Handson 2 - Advanced Calculator Testing
 
 ## Objective
 
-Learn the basics of NUnit by writing unit tests for a simple calculator library.
+Learn advanced NUnit testing techniques using parameterized tests, assertions, and exception handling.
 
 ## Project
 
@@ -11,7 +11,12 @@ CalcLibrary
 ## Features Tested
 
 - Addition
-- Parameterized Tests
+- Subtraction
+- Multiplication
+- Division
+- Division by Zero Exception
+- AllClear Method
+- GetResult Property
 
 ## NUnit Concepts Covered
 
@@ -20,11 +25,12 @@ CalcLibrary
 - Test
 - TestCase
 - Assert.That
+- Assert.Throws
 
 ## Verification
 
-Executed multiple addition test cases using parameterized tests. All test cases passed successfully.
+Executed unit tests for all calculator operations including exception handling and state reset.
 
 ## Outcome
 
-Successfully created and executed NUnit unit tests using TestFixture, SetUp, TestCase, and Assert.That.
+Successfully implemented comprehensive NUnit test cases for calculator functionality using parameterized tests and exception testing.
