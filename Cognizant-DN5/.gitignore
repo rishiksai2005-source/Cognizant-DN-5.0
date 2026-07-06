@@ -1,11 +1,20 @@
+# Build folders
 **/bin/
 **/obj/
+
+# Visual Studio
+.vs/
+**/.vs/
+
+# VS Code
 .vscode/
+
+# NuGet packages
+packages/
+**/packages/
+
 # Java compiled files
 *.class
 
-# VS Code settings
-.vscode/
-
-# Logs
+# Log files
 *.log
