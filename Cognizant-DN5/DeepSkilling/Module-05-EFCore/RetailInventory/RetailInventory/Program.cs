@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using RetailInventory.Data;
+using RetailInventory.Models;
 
 var configuration = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
@@ -13,4 +14,14 @@ var options = new DbContextOptionsBuilder<AppDbContext>()
 
 using var context = new AppDbContext(options);
 
-Console.WriteLine("Database connection configured successfully.");
+var productService = new ProductService(context);
+
+var product = new Product
+{
+    Name = "Laptop",
+    Price = 65000,
+    Stock = 25,
+    Category = "Electronics"
+};
+
+productService.AddProduct(product); 

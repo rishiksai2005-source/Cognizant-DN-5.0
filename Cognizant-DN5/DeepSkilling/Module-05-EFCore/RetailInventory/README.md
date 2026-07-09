@@ -107,3 +107,35 @@ Products
 
 Successfully created the SQL Server database and Products table using EF Core Code First.
 
+# RetailInventory - Lab 3
+
+## Objective
+
+Learn how to insert records into a SQL Server database using Entity Framework Core.
+
+## Technologies Used
+
+- C#
+- .NET 10
+- SQL Server
+- Entity Framework Core
+
+## Concepts Covered
+
+- Entity
+- DbContext
+- DbSet
+- SaveChanges()
+- CRUD - Create Operation
+
+## Implementation
+
+- Created ProductService
+- Added a Product object
+- Saved data using Entity Framework Core
+- Verified the inserted record in SQL Server
+
+## Result
+
+Successfully inserted product information into the Products table.
+
