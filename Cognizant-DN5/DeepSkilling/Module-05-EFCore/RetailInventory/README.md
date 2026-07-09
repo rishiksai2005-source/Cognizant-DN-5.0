@@ -40,3 +40,70 @@ A retail inventory system needs to manage products, categories, and stock inform
 - Understood how Entity Framework Core maps C# classes to SQL Server tables.
 - Configured a .NET project for Entity Framework Core development.
 
+# RetailInventory - Lab 2
+
+## Objective
+
+Implement Entity Framework Core using the Code First approach and create a SQL Server database using migrations.
+
+## Technologies Used
+
+- C#
+- .NET 10
+- SQL Server Express
+- Entity Framework Core
+- Visual Studio 2026
+
+## Packages
+
+- Microsoft.EntityFrameworkCore.SqlServer
+- Microsoft.EntityFrameworkCore.Design
+- Microsoft.EntityFrameworkCore.Tools
+- Microsoft.Extensions.Configuration.Json
+
+## Project Structure
+
+```
+RetailInventory
+│
+├── Data
+│   ├── AppDbContext.cs
+│   └── AppDbContextFactory.cs
+│
+├── Models
+│   └── Product.cs
+│
+├── Migrations
+│
+├── appsettings.json
+└── Program.cs
+```
+
+## Database
+
+Database Name
+
+```
+RetailInventoryDB
+```
+
+Table Created
+
+```
+Products
+```
+
+## Concepts Covered
+
+- Entity Framework Core
+- DbContext
+- DbSet
+- SQL Server Connection
+- Code First
+- Migration
+- Update Database
+
+## Result
+
+Successfully created the SQL Server database and Products table using EF Core Code First.
+
