@@ -18,5 +18,15 @@ namespace RetailInventory.Data
 
             Console.WriteLine("Product added successfully.");
         }
+
+        public List<Product> GetAllProducts()
+        {
+            return _context.Products.ToList();
+        }
+
+        public Product? GetProductById(int id)
+        {
+            return _context.Products.FirstOrDefault(p => p.ProductId == id);
+        }
     }
 }

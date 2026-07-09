@@ -1,27 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using RetailInventory.Data;
-using RetailInventory.Models;
+﻿var product = productService.GetProductById(1);
 
-var configuration = new ConfigurationBuilder()
-    .SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("appsettings.json")
-    .Build();
-
-var options = new DbContextOptionsBuilder<AppDbContext>()
-    .UseSqlServer(configuration.GetConnectionString("RetailDbConnection"))
-    .Options;
-
-using var context = new AppDbContext(options);
-
-var productService = new ProductService(context);
-
-var product = new Product
+if (product != null)
 {
-    Name = "Laptop",
-    Price = 65000,
-    Stock = 25,
-    Category = "Electronics"
-};
-
-productService.AddProduct(product); 
+    Console.WriteLine($"Product Found");
+    Console.WriteLine($"ID       : {product.ProductId}");
+    Console.WriteLine($"Name     : {product.Name}");
+    Console.WriteLine($"Price    : {product.Price}");
+    Console.WriteLine($"Stock    : {product.Stock}");
+    Console.WriteLine($"Category : {product.Category}");
+}
+else
+{
+    Console.WriteLine("Product not found.");
+}

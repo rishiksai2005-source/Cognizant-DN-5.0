@@ -139,3 +139,118 @@ Learn how to insert records into a SQL Server database using Entity Framework Co
 
 Successfully inserted product information into the Products table.
 
+# RetailInventory - Lab 4 (Read Operation)
+
+## Objective
+
+Learn how to retrieve data from a SQL Server database using Entity Framework Core.
+
+## Scenario
+
+The Retail Inventory application retrieves product information stored in the Products table. This lab demonstrates how to fetch all products and search for a specific product by its ID using Entity Framework Core.
+
+## Technologies Used
+
+- C#
+- .NET 10
+- Entity Framework Core
+- SQL Server Express
+- Visual Studio 2026
+
+## Concepts Covered
+
+- Entity Framework Core
+- DbContext
+- DbSet
+- LINQ Queries
+- ToList()
+- FirstOrDefault()
+- Find()
+- Read (Retrieve) Operation
+
+## Project Structure
+
+```
+RetailInventory
+│
+├── Data
+│   ├── AppDbContext.cs
+│   ├── AppDbContextFactory.cs
+│   └── ProductService.cs
+│
+├── Models
+│   └── Product.cs
+│
+├── Migrations
+│
+├── appsettings.json
+└── Program.cs
+```
+
+## Methods Implemented
+
+### Get All Products
+
+```csharp
+public List<Product> GetAllProducts()
+{
+    return _context.Products.ToList();
+}
+```
+
+### Get Product By ID
+
+```csharp
+public Product? GetProductById(int id)
+{
+    return _context.Products.FirstOrDefault(p => p.ProductId == id);
+}
+```
+
+## Program Flow
+
+- Connect to SQL Server using Entity Framework Core.
+- Retrieve all products from the Products table.
+- Display product details in the console.
+- Search for a product using its Product ID.
+- Display the selected product if found.
+
+## Sample Output
+
+```
+All Products
+------------
+
+ID       : 1
+Name     : Laptop
+Price    : 65000
+Stock    : 25
+Category : Electronics
+----------------------------
+```
+
+## Database
+
+Database Name
+
+```
+RetailInventoryDB
+```
+
+Table
+
+```
+Products
+```
+
+## Learning Outcome
+
+- Learned how to retrieve records using Entity Framework Core.
+- Understood the use of `ToList()`, `Find()`, and `FirstOrDefault()`.
+- Practiced displaying database records in a .NET Console Application.
+- Successfully implemented the Read operation of CRUD.
+
+## Result
+
+Successfully retrieved and displayed product information from the SQL Server database.
+
