@@ -5,4 +5,4 @@ public class UpiPayment implements PaymentStrategy {
         System.out.println("Paid Rs." + amount + " using UPI.");
     }
 
-}
+}   

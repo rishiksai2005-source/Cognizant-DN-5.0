@@ -10,4 +10,4 @@ public class ShoppingCart {
         paymentStrategy.pay(amount);
     }
 
-}
+}   
